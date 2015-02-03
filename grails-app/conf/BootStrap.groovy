@@ -9,8 +9,8 @@ class BootStrap {
         Role roleUser = new Role(authority: 'ROLE_USER').save(flush: true)
 
         User user = new User(
-                username: 'user',
-                password: 'user',
+                username: 'cris',
+                password: 'cris',
                 enabled: true,
                 accountExpired: false,
                 accountLocked: false,
@@ -24,8 +24,9 @@ class BootStrap {
                 authorizedGrantTypes: ['authorization_code', 'refresh_token', 'implicit', 'password', 'client_credentials'],
                 authorities: ['ROLE_CLIENT'],
                 scopes: ['read', 'write'],
-                redirectUris: ['http://myredirect.com']
+                redirectUris: ['http://localhost:8082/grailsOauthPluginDemo/oauthCallBack/custom']
         ).save(flush: true)
+
 
 
     }

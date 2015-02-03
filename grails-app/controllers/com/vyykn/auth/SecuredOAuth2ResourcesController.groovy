@@ -3,6 +3,8 @@ package com.vyykn.auth
 import grails.plugin.springsecurity.annotation.Secured
 
 class SecuredOAuth2ResourcesController {
+    def springSecurityService
+
     @Secured(["#oauth2.clientHasRole('ROLE_CLIENT')"])
     def clientRoleExpression() {
         render "client role expression"
@@ -25,8 +27,11 @@ class SecuredOAuth2ResourcesController {
 
     @Secured(["#oauth2.isUser()"])
     def user() {
-        render "is user"
+
+        render "Welcome ${springSecurityService.currentUser}"
     }
+
+
 
     @Secured(["#oauth2.denyOAuthClient()"])
     def denyClient() {
