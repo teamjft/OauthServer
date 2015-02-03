@@ -132,7 +132,9 @@ grails.plugin.springsecurity.authority.className = 'com.vyykn.auth.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/oauth/authorize.dispatch':      ["isFullyAuthenticated() and (request.getMethod().equals('GET') or request.getMethod().equals('POST'))"],
     '/oauth/token.dispatch':          ["isFullyAuthenticated() and request.getMethod().equals('POST')"],
-	'/':                              ['permitAll'],
+    '/client/index':                              ['ROLE_USER'],
+    '/client/**':                              ['ROLE_USER'],
+    '/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
 	'/assets/**':                     ['permitAll'],

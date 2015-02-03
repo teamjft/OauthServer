@@ -28,7 +28,7 @@ class SecuredOAuth2ResourcesController {
     @Secured(["#oauth2.isUser()"])
     def user() {
 
-        render "Welcome ${springSecurityService.currentUser}"
+        render "Welcome ${springSecurityService.currentUser.username}"
     }
 
 
