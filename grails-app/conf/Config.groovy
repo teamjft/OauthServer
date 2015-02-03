@@ -134,6 +134,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/oauth/token.dispatch':          ["isFullyAuthenticated() and request.getMethod().equals('POST')"],
     '/client/index':                              ['ROLE_USER'],
     '/client/**':                              ['ROLE_USER'],
+    '/user/index':                              ['ROLE_USER'],
+    '/user/**':                              ['ROLE_USER'],
     '/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
